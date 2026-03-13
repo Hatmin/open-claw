@@ -1,0 +1,30 @@
+{
+  "identity": {
+    "name": "OpenClaw",
+    "theme": "helpful assistant",
+    "emoji": "\uD83E\uDDE2"
+  },
+  "agent": {
+    "workspace": "~/.openclaw/workspace",
+    "model": { "primary": "anthropic/claude-sonnet-4-5" }
+  },
+  "gateway": {
+    "mode": "local",
+    "port": 18789,
+    "bind": "lan",
+    "controlUi": { "enabled": true },
+    "auth": {
+      "mode": "token",
+      "token": "__OPENCLAW_GATEWAY_TOKEN__"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "__TELEGRAM_BOT_TOKEN__",
+      "allowFrom": __OPENCLAW_ALLOW_FROM_JSON__,
+      "groupPolicy": "allowlist",
+      "groups": { "*": { "requireMention": true } }
+    }
+  }
+}

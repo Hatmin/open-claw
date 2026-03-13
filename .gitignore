@@ -1,0 +1,22 @@
+# Environment and secrets (never commit)
+.env
+.env.local
+.env.*.local
+
+# Generated config with secrets
+config/openclaw.json
+
+# OpenClaw runtime data (optional: uncomment if you don't want to persist in repo)
+# openclaw-data/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs
+*.log
+logs/
