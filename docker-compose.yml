@@ -1,19 +1,29 @@
 # OpenClaw + Telegram: un solo servicio (OpenClaw incluye canal Telegram nativo).
 # Antes del primer arranque: copiar .env.example a .env, rellenar y ejecutar
 #   scripts/generate-openclaw-config.ps1  (Windows) o  ./scripts/generate-openclaw-config.sh  (Linux/Mac)
+#
+# agents/ usa volumen nombrado para evitar EPERM chmod en bind mount (Windows).
 
 services:
   openclaw:
     image: ghcr.io/openclaw/openclaw:latest
+    user: "0"
     env_file:
       - .env
+    entrypoint: ["sh", "/docker-entrypoint.sh"]
+    command: ["openclaw", "gateway"]
     volumes:
       - ./config:/home/node/.openclaw
+      - openclaw-agents:/home/node/.openclaw/agents
+      - ./scripts/docker-entrypoint.sh:/docker-entrypoint.sh:ro
     ports:
       - "18789:18789"
     networks:
       - ai-network
     restart: unless-stopped
+
+volumes:
+  openclaw-agents:
 
 networks:
   ai-network:

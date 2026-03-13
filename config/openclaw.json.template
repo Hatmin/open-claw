@@ -1,18 +1,31 @@
 {
-  "identity": {
-    "name": "OpenClaw",
-    "theme": "helpful assistant",
-    "emoji": "\uD83E\uDDE2"
-  },
-  "agent": {
-    "workspace": "~/.openclaw/workspace",
-    "model": { "primary": "anthropic/claude-sonnet-4-5" }
+  "agents": {
+    "defaults": {
+      "workspace": "~/.openclaw/workspace",
+      "model": {
+        "primary": "openrouter/anthropic/claude-sonnet-4",
+        "fallbacks": ["openrouter/openai/gpt-4o-mini"]
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "identity": {
+          "name": "OpenClaw",
+          "theme": "helpful assistant",
+          "emoji": "\uD83E\uDDE2"
+        }
+      }
+    ]
   },
   "gateway": {
     "mode": "local",
     "port": 18789,
     "bind": "lan",
-    "controlUi": { "enabled": true },
+    "controlUi": {
+      "enabled": true,
+      "allowedOrigins": ["http://localhost:18789", "http://127.0.0.1:18789"]
+    },
     "auth": {
       "mode": "token",
       "token": "__OPENCLAW_GATEWAY_TOKEN__"

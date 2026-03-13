@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "profiles": {
+    "openrouter:default": {
+      "provider": "openrouter",
+      "mode": "api_key",
+      "keyRef": {
+        "source": "env",
+        "provider": "default",
+        "id": "OPENROUTER_API_KEY"
+      },
+      "type": "api_key"
+    }
+  },
+  "order": {
+    "openrouter": [
+      "openrouter:default"
+    ]
+  },
+  "lastGood": {
+    "openrouter": "openrouter:default"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "agent:main:main": {
+    "origin": {
+      "label": "Gaston id:832644060",
+      "provider": "telegram",
+      "surface": "telegram",
+      "chatType": "direct",
+      "from": "telegram:832644060",
+      "to": "telegram:832644060",
+      "accountId": "default"
+    },
+    "sessionId": "aa5eff61-5dce-4b33-8623-4e38037da4ee",
+    "updatedAt": 1773422989091,
+    "deliveryContext": {
+      "channel": "telegram",
+      "to": "telegram:832644060",
+      "accountId": "default"
+    },
+    "lastChannel": "telegram",
+    "lastTo": "telegram:832644060",
+    "lastAccountId": "default",
+    "systemSent": true,
+    "abortedLastRun": false,
+    "chatType": "direct",
+    "sessionFile": "/home/node/.openclaw/agents/main/sessions/aa5eff61-5dce-4b33-8623-4e38037da4ee.jsonl",
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>/app/skills/healthcheck/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>/app/skills/skill-creator/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>/app/skills/weather/SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "weather",
+          "requiredEnv": []
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "/app/skills/healthcheck/SKILL.md",
+          "baseDir": "/app/skills/healthcheck",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "/app/skills/skill-creator/SKILL.md",
+          "baseDir": "/app/skills/skill-creator",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+          "filePath": "/app/skills/weather/SKILL.md",
+          "baseDir": "/app/skills/weather",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "authProfileOverride": "openrouter:default",
+    "authProfileOverrideSource": "auto",
+    "authProfileOverrideCompactionCount": 0
+  }
+}
