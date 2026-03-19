@@ -5,6 +5,7 @@
 
 # Generated config with secrets
 config/openclaw.json
+config/identity/device.json
 
 # OpenClaw runtime data (optional: uncomment if you don't want to persist in repo)
 # openclaw-data/
